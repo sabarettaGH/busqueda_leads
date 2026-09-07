@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{NOMBRE_NEGOCIO}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#6B8F71;
+    --blue:#7C9EB2;
+    --cream:#FAF6F0;
+    --ink:#33403A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Karla', sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
+  header{
+    padding:72px 24px 56px;
+    text-align:center;
+    background:var(--sage);
+    color:white;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    bottom:-40px; right:-40px;
+    width:180px; height:180px;
+    border-radius:50%;
+    background:var(--blue);
+    opacity:0.35;
+  }
+  header h1{
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.2rem, 6vw, 3.2rem);
+    position:relative;
+  }
+  header p{margin-top:14px;font-size:1.1rem;opacity:0.95;position:relative;}
+  nav.info{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:24px;
+    margin-top:24px;font-size:0.92rem;position:relative;
+  }
+  main{max-width:780px;margin:0 auto;padding:56px 24px;}
+  section{margin-bottom:60px;}
+  h2{
+    font-family:'Quicksand', sans-serif;
+    font-weight:600;
+    font-size:1.7rem;
+    color:var(--sage);
+    margin-bottom:24px;
+  }
+  .services{display:flex;flex-direction:column;gap:14px;}
+  .service{
+    display:flex;align-items:center;gap:16px;
+    background:white;border-left:4px solid var(--blue);
+    padding:18px 20px;border-radius:0 10px 10px 0;
+  }
+  .service .dot{
+    width:38px;height:38px;flex:none;border-radius:50%;
+    background:var(--sage);color:white;display:flex;
+    align-items:center;justify-content:center;font-size:1.1rem;
+  }
+  .service strong{display:block;}
+  .service span{font-size:0.9rem;opacity:0.75;}
+  blockquote{
+    background:var(--blue);
+    color:white;
+    padding:28px 26px;
+    border-radius:12px;
+    font-size:1.05rem;
+    font-style:italic;
+  }
+  blockquote footer{
+    margin-top:12px;font-style:normal;font-size:0.85rem;opacity:0.9;
+  }
+  .cta{
+    text-align:center;
+    background:white;
+    border:2px dashed var(--sage);
+    border-radius:14px;
+    padding:36px 24px;
+  }
+  .cta p{max-width:420px;margin:0 auto 20px;}
+  .btn{
+    display:inline-block;background:var(--sage);color:white;
+    padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:600;
+  }
+  footer.site{
+    text-align:center;padding:26px 20px;font-size:0.85rem;color:var(--ink);opacity:0.8;
+  }
+  footer.site a{color:var(--sage);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>{{NOMBRE_NEGOCIO}}</h1>
+  <p>Cuidado veterinario cercano en {{CIUDAD}}</p>
+  <nav class="info">
+    <span>📍 {{DIRECCION}}</span>
+    <span>📞 {{TELEFONO}}</span>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Nuestros servicios</h2>
+    <div class="services">
+      <div class="service"><div class="dot">✓</div><div><strong>Consultas generales</strong><span>Chequeos de rutina y urgencias</span></div></div>
+      <div class="service"><div class="dot">✓</div><div><strong>Vacunación</strong><span>Calendario completo para perros y gatos</span></div></div>
+      <div class="service"><div class="dot">✓</div><div><strong>Peluquería</strong><span>Baño y estética para tu mascota</span></div></div>
+      <div class="service"><div class="dot">✓</div><div><strong>Cirugías</strong><span>Equipamiento y seguimiento profesional</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <blockquote>
+      "Atendieron a mi perro un domingo sin dudarlo, con muchísima calidez."
+      <footer>— Un vecino de {{CIUDAD}}</footer>
+    </blockquote>
+  </section>
+
+  <section class="cta">
+    <h2>Pedí tu turno</h2>
+    <p>Contanos qué necesita tu mascota y coordinamos el mejor horario.</p>
+    <a class="btn" href="https://wa.me/{{WHATSAPP}}">Reservar por WhatsApp</a>
+  </section>
+</main>
+
+<footer class="site">
+  Sitio demo creado por {{FREELANCER_NOMBRE}} — <a href="{{PORTFOLIO_LINK}}">ver más trabajos</a>
+</footer>
+
+</body>
+</html>

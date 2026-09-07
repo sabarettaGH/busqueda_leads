@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{NOMBRE_NEGOCIO}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mustard:#E3A008;
+    --teal:#114B5F;
+    --cream:#FBF7EF;
+    --ink:#2B2118;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  .stripes{
+    height:14px;
+    background:repeating-linear-gradient(45deg, var(--teal) 0 24px, var(--mustard) 24px 48px);
+  }
+  header{
+    padding:64px 24px 48px;
+    text-align:center;
+    background:var(--teal);
+    color:var(--cream);
+  }
+  header h1{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:clamp(2.8rem, 8vw, 5rem);
+    letter-spacing:1px;
+    line-height:0.95;
+  }
+  header p.tag{
+    margin-top:12px;
+    font-size:1.05rem;
+    color:var(--mustard);
+    font-weight:500;
+  }
+  .info-bar{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:28px;
+    margin-top:28px;
+    font-size:0.95rem;
+  }
+  .info-bar span{opacity:0.9;}
+  main{max-width:760px;margin:0 auto;padding:56px 24px;}
+  section{margin-bottom:56px;}
+  h2{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:2rem;
+    color:var(--teal);
+    letter-spacing:0.5px;
+    margin-bottom:20px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+    gap:16px;
+  }
+  .item{
+    background:white;
+    border:2px solid var(--ink);
+    border-radius:4px;
+    padding:18px;
+  }
+  .item strong{display:block;font-size:1.05rem;margin-bottom:4px;}
+  .item span{font-size:0.85rem;opacity:0.75;}
+  .cta{
+    background:var(--mustard);
+    border-radius:8px;
+    padding:36px 28px;
+    text-align:center;
+  }
+  .cta h2{color:var(--ink);}
+  .cta p{max-width:420px;margin:0 auto 20px;}
+  .btn{
+    display:inline-block;
+    background:var(--teal);
+    color:var(--cream);
+    padding:14px 28px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:700;
+  }
+  footer{
+    background:var(--ink);
+    color:var(--cream);
+    text-align:center;
+    padding:28px 20px;
+    font-size:0.85rem;
+  }
+  footer a{color:var(--mustard);}
+</style>
+</head>
+<body>
+
+<div class="stripes"></div>
+
+<header>
+  <h1>{{NOMBRE_NEGOCIO}}</h1>
+  <p class="tag">Tu kiosco de confianza en {{CIUDAD}}</p>
+  <div class="info-bar">
+    <span>📍 {{DIRECCION}}</span>
+    <span>🕒 Abierto todos los días</span>
+    <span>📞 {{TELEFONO}}</span>
+  </div>
+</header>
+
+<div class="stripes"></div>
+
+<main>
+  <section>
+    <h2>Qué encontrás</h2>
+    <div class="grid">
+      <div class="item"><strong>Almacén</strong><span>Productos de primera necesidad</span></div>
+      <div class="item"><strong>Golosinas y snacks</strong><span>Para cualquier antojo</span></div>
+      <div class="item"><strong>Bebidas frías</strong><span>Siempre a mano</span></div>
+      <div class="item"><strong>Recargas y pagos</strong><span>Servicios rápidos</span></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Pedí sin moverte de tu casa</h2>
+    <p>Hacé tu pedido por WhatsApp y lo tenés en minutos.</p>
+    <a class="btn" href="https://wa.me/{{WHATSAPP}}">Escribir por WhatsApp</a>
+  </section>
+</main>
+
+<footer>
+  Sitio demo creado por {{FREELANCER_NOMBRE}} — <a href="{{PORTFOLIO_LINK}}">ver más trabajos</a>
+</footer>
+
+</body>
+</html>

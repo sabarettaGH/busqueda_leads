@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{NOMBRE_NEGOCIO}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#5C1A33;
+    --charcoal:#1B1512;
+    --gold:#C9A227;
+    --cream:#F3EAD9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Work Sans', sans-serif;background:var(--charcoal);color:var(--cream);line-height:1.6;}
+  header{
+    padding:96px 24px 64px;
+    text-align:center;
+    background:linear-gradient(180deg, var(--wine), var(--charcoal));
+  }
+  header h1{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:clamp(2.6rem, 7vw, 4.4rem);
+    letter-spacing:0.5px;
+  }
+  header p{
+    margin-top:16px;font-size:1.1rem;color:var(--gold);
+    font-family:'Fraunces', serif;font-style:italic;
+  }
+  .divider{
+    width:60px;height:2px;background:var(--gold);margin:26px auto 0;
+  }
+  main{max-width:720px;margin:0 auto;padding:64px 24px;}
+  section{margin-bottom:64px;}
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.9rem;
+    color:var(--gold);
+    margin-bottom:28px;
+    text-align:center;
+  }
+  .menu-item{
+    display:flex;justify-content:space-between;align-items:baseline;
+    gap:10px;padding:14px 0;
+    border-bottom:1px dotted rgba(243,234,217,0.25);
+  }
+  .menu-item .name{font-family:'Fraunces', serif;font-size:1.15rem;}
+  .menu-item .desc{display:block;font-size:0.85rem;color:rgba(243,234,217,0.6);margin-top:4px;}
+  .info-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;
+    background:rgba(255,255,255,0.04);
+    padding:28px;border-radius:6px;
+  }
+  .info-grid div strong{display:block;color:var(--gold);font-size:0.85rem;letter-spacing:0.5px;margin-bottom:6px;}
+  .cta{text-align:center;}
+  .btn{
+    display:inline-block;background:var(--gold);color:var(--charcoal);
+    padding:16px 36px;border-radius:2px;text-decoration:none;font-weight:600;
+    letter-spacing:0.5px;
+  }
+  footer{
+    text-align:center;padding:28px 20px;font-size:0.85rem;
+    color:rgba(243,234,217,0.6);border-top:1px solid rgba(243,234,217,0.1);
+  }
+  footer a{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>{{NOMBRE_NEGOCIO}}</h1>
+  <p>Cocina de {{CIUDAD}}, hecha con calma</p>
+  <div class="divider"></div>
+</header>
+
+<main>
+  <section>
+    <h2>Algunos de nuestros platos</h2>
+    <div class="menu-item">
+      <div><span class="name">Plato de la casa</span><span class="desc">La receta que nos representa</span></div>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Entrada del día</span><span class="desc">Cambia según la temporada</span></div>
+    </div>
+    <div class="menu-item">
+      <div><span class="name">Postre casero</span><span class="desc">Para cerrar como corresponde</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Visitanos</h2>
+    <div class="info-grid">
+      <div><strong>Dirección</strong>{{DIRECCION}}</div>
+      <div><strong>Teléfono</strong>{{TELEFONO}}</div>
+      <div><strong>Ciudad</strong>{{CIUDAD}}</div>
+      <div><strong>Reservas</strong>Por WhatsApp</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Reservá tu mesa</h2>
+    <a class="btn" href="https://wa.me/{{WHATSAPP}}">Reservar por WhatsApp</a>
+  </section>
+</main>
+
+<footer>
+  Sitio demo creado por {{FREELANCER_NOMBRE}} — <a href="{{PORTFOLIO_LINK}}">ver más trabajos</a>
+</footer>
+
+</body>
+</html>

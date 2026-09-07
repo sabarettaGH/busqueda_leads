@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{NOMBRE_NEGOCIO}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A41;
+    --stone:#C9BBA8;
+    --off:#F5F2EC;
+    --copper:#A85C32;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter', sans-serif;background:var(--off);color:var(--navy);line-height:1.6;}
+  header{
+    padding:80px 24px 60px;
+    background:var(--navy);
+    color:var(--off);
+  }
+  .header-inner{max-width:820px;margin:0 auto;}
+  header .eyebrow{color:var(--stone);font-size:0.9rem;}
+  header h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    margin-top:10px;
+  }
+  header p{margin-top:14px;max-width:480px;color:var(--stone);}
+  main{max-width:820px;margin:0 auto;padding:56px 24px;}
+  section{margin-bottom:60px;}
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.7rem;
+    margin-bottom:26px;
+  }
+  .listings{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:18px;
+  }
+  .listing{
+    background:white;border:1px solid rgba(27,42,65,0.12);
+    border-radius:4px;overflow:hidden;
+  }
+  .listing .thumb{
+    height:150px;
+    background:linear-gradient(135deg, var(--stone), var(--navy));
+  }
+  .listing.small .thumb{height:110px;}
+  .listing .body{padding:16px 18px;}
+  .listing .price{color:var(--copper);font-weight:600;font-size:1.05rem;}
+  .listing .addr{font-size:0.9rem;opacity:0.75;margin-top:4px;}
+  .listing.wide{grid-row:span 2;}
+  .agent{
+    display:flex;gap:20px;align-items:center;
+    background:var(--navy);color:var(--off);
+    padding:30px 26px;border-radius:6px;
+  }
+  .agent .avatar{
+    width:64px;height:64px;border-radius:50%;
+    background:var(--copper);flex:none;
+  }
+  .agent h3{font-family:'Fraunces', serif;font-weight:600;font-size:1.2rem;}
+  .agent p{font-size:0.9rem;color:var(--stone);margin-top:4px;}
+  .cta{text-align:center;margin-top:22px;}
+  .btn{
+    display:inline-block;background:var(--copper);color:white;
+    padding:14px 30px;border-radius:4px;text-decoration:none;font-weight:600;
+  }
+  footer{
+    text-align:center;padding:26px 20px;font-size:0.85rem;
+    color:var(--navy);opacity:0.75;
+  }
+  footer a{color:var(--copper);}
+  @media (max-width:600px){
+    .listings{grid-template-columns:1fr;}
+    .listing.wide{grid-row:auto;}
+    .agent{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">Inmobiliaria en {{CIUDAD}}</div>
+    <h1>{{NOMBRE_NEGOCIO}}</h1>
+    <p>Propiedades para comprar, vender y alquilar en {{CIUDAD}}, con acompañamiento en cada paso.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>Propiedades destacadas</h2>
+    <div class="listings">
+      <div class="listing wide">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="price">Consultar valor</div>
+          <div class="addr">{{DIRECCION}}, {{CIUDAD}}</div>
+        </div>
+      </div>
+      <div class="listing small">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="price">Consultar valor</div>
+          <div class="addr">Zona centro, {{CIUDAD}}</div>
+        </div>
+      </div>
+      <div class="listing small">
+        <div class="thumb"></div>
+        <div class="body">
+          <div class="price">Consultar valor</div>
+          <div class="addr">Zona norte, {{CIUDAD}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="agent">
+      <div class="avatar"></div>
+      <div>
+        <h3>{{NOMBRE_NEGOCIO}}</h3>
+        <p>{{TELEFONO}} · {{DIRECCION}}</p>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/{{WHATSAPP}}">Consultar por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Sitio demo creado por {{FREELANCER_NOMBRE}} — <a href="{{PORTFOLIO_LINK}}">ver más trabajos</a>
+</footer>
+
+</body>
+</html>
